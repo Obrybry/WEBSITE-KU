@@ -1,157 +1,140 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Playlist</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obry | My Spotify</title>
+
+<style>
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background-color: #090909;
-  background-image:
-    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
-    url("./1808b7b8f232d39ae2dfdd717cb1ccd6.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  color: white;
-  font-family: Arial, sans-serif;
-  padding: 24px;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #090909;
+    background-image: url("https://raw.githubusercontent.com/Obrybry/WEBSITE-KU/main/1808b7b8f232d39ae2dfdd717cb1ccd6.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 24px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 27px;
-  font-weight: bold;
-  margin-bottom: 8px;
+    text-align: center;
+    margin: 20px 0 30px;
 }
 
-.spotify-logo {
-  width: 35px;
-  height: 35px;
-  flex-shrink: 0;
-}
-
-p {
-  color: #aaa;
-}
-
-main {
-  max-width: 650px;
-  margin: 30px auto;
-  background: rgba(23, 23, 23, 0.75);
-  padding: 22px;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
-}
-
-.playlist-slider {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  padding-bottom: 12px;
-}
-
-.playlist-card {
-  flex: 0 0 100%;
-  min-width: 0;
-  scroll-snap-align: start;
+.logo {
+    width: 55px;
+    height: 55px;
+    fill: #1DB954;
 }
 
 h1 {
-  font-size: 25px;
-  margin-bottom: 8px;
+    margin: 12px 0 8px;
+    font-size: 32px;
+}
+
+header p {
+    color: #cccccc;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 22px;
+    background: rgba(15, 15, 15, 0.78);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.playlist {
+    margin: 20px 0;
 }
 
 iframe {
-  display: block;
-  width: 100%;
-  height: 500px;
-  border: 0;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-
-a {
-  color: #1ed760;
-  text-decoration: none;
-}
-
-.swipe-hint {
-  text-align: center;
-  font-size: 13px;
-  color: #888;
+    width: 100%;
+    height: 352px;
+    border: none;
+    border-radius: 12px;
 }
 
 footer {
-  text-align: center;
-  color: #777;
-  margin: 30px 0;
+    text-align: center;
+    color: #bbbbbb;
+    font-size: 13px;
+    margin: 25px 0 10px;
 }
-</style></head><body><header>
-  <svg class="spotify-logo" viewBox="0 0 24 24"
-       xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="12" fill="#1ED760"/>
-    <path d="M5.2 8.5c4.8-1.4 10.4-.7 14 1.5"
-          fill="none" stroke="#000" stroke-width="1.8"
-          stroke-linecap="round"/>
-    <path d="M6.1 11.8c4-1.1 8.7-.4 11.8 1.3"
-          fill="none" stroke="#000" stroke-width="1.6"
-          stroke-linecap="round"/>
-    <path d="M7 15c3.3-.8 6.7-.3 9.5 1.1"
-          fill="none" stroke="#000" stroke-width="1.5"
-          stroke-linecap="round"/>
-  </svg>My Playlist
 
-</header><p>Your music. Your world.</p><main>
-  <p>YOUR PERSONAL PLAYLIST</p>  <div class="playlist-slider"><!-- PLAYLIST PERTAMA -->
-<section class="playlist-card">
-  <h1>Double_G fav 🎧</h1>
-  <p>Playlist by BryG</p>
+@media (max-width: 600px) {
+    body {
+        padding: 14px;
+        background-attachment: scroll;
+    }
 
-  <iframe
-    src="https://open.spotify.com/embed/playlist/0HCgtcdgiD1j8Zrgsml4rX"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
+    main {
+        padding: 15px;
+    }
 
-  <p>
-    <a href="https://open.spotify.com/playlist/0HCgtcdgiD1j8Zrgsml4rX"
-       target="_blank" rel="noopener noreferrer">
-      Buka di Spotify ↗
-    </a>
-  </p>
-</section>
+    h1 {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
 
-<!-- PLAYLIST KEDUA -->
-<section class="playlist-card">
-  <h1>My Playlist 2 🎶</h1>
-  <p>Playlist by BryG</p>
+<body>
 
-  <iframe
-    src="https://open.spotify.com/embed/playlist/3ek65NRqWq1WYjGUvCUUi7"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
+<header>
+    <svg class="logo" viewBox="0 0 24 24" aria-label="Spotify">
+        <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.503 17.308a.75.75 0 0 1-1.032.248c-2.826-1.727-6.385-2.117-10.578-1.16a.75.75 0 1 1-.334-1.462c4.586-1.048 8.52-.598 11.696 1.342a.75.75 0 0 1 .248 1.032zm1.472-3.275a.937.937 0 0 1-1.289.309c-3.235-1.989-8.168-2.565-11.994-1.403a.938.938 0 1 1-.545-1.795c4.372-1.326 9.802-.684 13.519 1.6a.937.937 0 0 1 .309 1.289zm.126-3.41C15.22 8.33 8.79 8.117 5.068 9.247a1.125 1.125 0 1 1-.654-2.153c4.273-1.297 11.38-1.047 15.875 1.622a1.125 1.125 0 0 1-1.188 1.907z"/>
+    </svg>
 
-  <p>
-    <a href="https://open.spotify.com/playlist/3ek65NRqWq1WYjGUvCUUi7"
-       target="_blank" rel="noopener noreferrer">
-      Buka di Spotify ↗
-    </a>
-  </p>
-</section>
+    <h1>OBRY</h1>
+    <p>My Music • My Playlist • My Vibes</p>
+</header>
 
-  </div>  <p class="swipe-hint">
-    ← Geser ke samping untuk melihat playlist lainnya →
-  </p>
-</main><footer>Made with ♫ © 2026</footer></body>
+<main>
+    <h2>🎧 My Playlist</h2>
+
+    <div class="playlist">
+        <iframe
+            src="https://open.spotify.com/embed/playlist/0HCgtcdgiD1j8Zrgsml4rX?utm_source=generator"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="playlist">
+        <iframe
+            src="https://open.spotify.com/embed/playlist/3ek65NRqWq1WYjGUvCUUi7?utm_source=generator"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+    </div>
+</main>
+
+<footer>
+    © 2026 OBRY • All rights reserved.
+</footer>
+
+</body>
 </html>
