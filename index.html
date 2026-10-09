@@ -1,59 +1,149 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OBRY MUSIC</title>
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;background:#090909;color:white;
-  font-family:Arial,sans-serif;padding:24px;
+<title>My Playlist</title><style>
+* {
+  box-sizing: border-box;
 }
-header{font-size:27px;font-weight:bold;margin-bottom:8px}
-header span{color:#1ed760}
-p{color:#aaa}
-main{
-  max-width:650px;margin:30px auto;
-  background:#171717;padding:22px;border-radius:20px;
-}
-h1{font-size:29px;margin-bottom:8px}
-iframe{
-  width:100%;height:500px;border:0;
-  border-radius:12px;margin-top:15px;
-}
-button{
-  background:#1ed760;color:#000;border:0;
-  border-radius:30px;padding:14px 20px;
-  font-weight:bold;font-size:15px;cursor:pointer;
-}
-a{color:#1ed760;text-decoration:none}
-footer{text-align:center;color:#777;margin:30px 0}
-</style>
-</head>
-<body>
-<header>OBRY <span>MUSIC ♪</span></header>
-<p>Your music. Your world.</p>
 
-<main>
-  <p>YOUR PERSONAL PLAYLIST</p>
+body {
+  margin: 0;
+  background: #090909;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.spotify-logo {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+}
+
+p {
+  color: #aaa;
+}
+
+main {
+  max-width: 650px;
+  margin: 30px auto;
+  background: #171717;
+  padding: 22px;
+  border-radius: 20px;
+}
+
+.playlist-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 12px;
+}
+
+.playlist-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+h1 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+a {
+  color: #1ed760;
+  text-decoration: none;
+}
+
+.swipe-hint {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+footer {
+  text-align: center;
+  color: #777;
+  margin: 30px 0;
+}
+</style></head><body><header>
+  <svg class="spotify-logo" viewBox="0 0 24 24"
+       xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="12" fill="#1ED760"/>
+    <path d="M5.2 8.5c4.8-1.4 10.4-.7 14 1.5"
+          fill="none" stroke="#000" stroke-width="1.8"
+          stroke-linecap="round"/>
+    <path d="M6.1 11.8c4-1.1 8.7-.4 11.8 1.3"
+          fill="none" stroke="#000" stroke-width="1.6"
+          stroke-linecap="round"/>
+    <path d="M7 15c3.3-.8 6.7-.3 9.5 1.1"
+          fill="none" stroke="#000" stroke-width="1.5"
+          stroke-linecap="round"/>
+  </svg>
+  My Playlist
+</header><p>Your music. Your world.</p><main>
+  <p>YOUR PERSONAL PLAYLIST</p>  <div class="playlist-slider"><!-- PLAYLIST PERTAMA -->
+<section class="playlist-card">
   <h1>Double_G fav 🎧</h1>
   <p>Playlist by BryG</p>
 
   <iframe
-    src="https://open.spotify.com/embed/playlist/0HCgtcdgiD1j8Zrgsml4rX?utm_source=generator"
+    src="https://open.spotify.com/embed/playlist/0HCgtcdgiD1j8Zrgsml4rX"
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
     loading="lazy">
   </iframe>
 
   <p>
     <a href="https://open.spotify.com/playlist/0HCgtcdgiD1j8Zrgsml4rX"
-       target="_blank">
-      Buka playlist di Spotify ↗
+       target="_blank" rel="noopener noreferrer">
+      Buka di Spotify ↗
     </a>
   </p>
-</main>
+</section>
 
-<footer>Made by Obry © 2026</footer>
-</body>
+<!-- PLAYLIST KEDUA -->
+<section class="playlist-card">
+  <h1>My Playlist 2 🎶</h1>
+  <p>Playlist by BryG</p>
+
+  <iframe
+    src="https://open.spotify.com/embed/playlist/3ek65NRqWq1WYjGUvCUUi7"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+
+  <p>
+    <a href="https://open.spotify.com/playlist/3ek65NRqWq1WYjGUvCUUi7"
+       target="_blank" rel="noopener noreferrer">
+      Buka di Spotify ↗
+    </a>
+  </p>
+</section>
+
+  </div>  <p class="swipe-hint">
+    ← Geser ke samping untuk melihat playlist lainnya →
+  </p>
+</main><footer>Made with ♫ © 2026</footer></body>
 </html>
