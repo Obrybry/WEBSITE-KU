@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obry Music</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;background:#090909;color:white;
+  font-family:Arial,sans-serif;padding:18px;
+}
+header{font-size:25px;font-weight:bold;margin:10px 0 25px}
+header span{color:#1ed760}
+h2{margin-top:28px}
+.sub{color:#aaa;font-size:14px}
+.search{
+  width:100%;padding:14px;border-radius:25px;
+  border:0;background:#242424;color:white;font-size:16px;
+}
+.playlist{
+  background:linear-gradient(135deg,#184b32,#101010);
+  padding:22px;border-radius:18px;margin-top:20px;
+}
+.cover{
+  height:150px;width:150px;border-radius:12px;
+  background:linear-gradient(135deg,#1ed760,#123d29);
+  display:flex;align-items:center;justify-content:center;
+  font-size:38px;font-weight:bold;box-shadow:0 5px 25px #000;
+}
+button{
+  border:0;border-radius:25px;padding:12px 20px;
+  background:#1ed760;color:#000;font-weight:bold;
+  font-size:15px;cursor:pointer;
+}
+.song{
+  display:flex;align-items:center;gap:13px;
+  padding:12px 5px;border-radius:10px;
+}
+.song:active{background:#222}
+.songcover{
+  width:52px;height:52px;flex-shrink:0;border-radius:7px;
+  background:linear-gradient(135deg,#444,#171717);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+}
+.info{flex:1;min-width:0}
+.info b{display:block;font-size:15px}
+.info small{display:block;color:#aaa;margin-top:5px}
+a{color:white;text-decoration:none}
+footer{color:#777;text-align:center;margin:35px 0 10px}
+</style>
+</head>
+<body>
+
+<header>♪ OBRY <span>MUSIC</span></header>
+
+<p class="sub">MUSIK YANG MENEMANI HARI LU.</p>
+
+<input class="search" id="search"
+placeholder="Cari lagu atau artis..."
+oninput="render()">
+
+<div class="playlist">
+  <div class="cover">OBRY</div>
+  <p class="sub">PLAYLIST PILIHAN</p>
+  <h2>My Favorite Songs</h2>
+  <p class="sub">Pop punk • Rock • Indie</p>
+  <button onclick="openSpotify('pop punk rock')">
+    ▶ Putar di Spotify
+  </button>
+</div>
+
+<h2>Playlist lu</h2>
+<div id="songs"></div>
+
+<footer>Made for music lovers ♫</footer>
+
+<script>
+const tracks = [
+  {title:"That One I Met",artist:"Obry",emoji:"🎸"},
+  {title:"Yang Ku Temui",artist:"Obry",emoji:"🎵"},
+  {title:"Pop Punk Favorites",artist:"Pop Punk",emoji:"🔥"},
+  {title:"Rock Anthems",artist:"Rock",emoji:"🤘"},
+  {title:"Indie Acoustic",artist:"Indie",emoji:"🌙"}
+];
+
+function openSpotify(query){
+  window.open(
+    "https://open.spotify.com/search/" +
+    encodeURIComponent(query),
+    "_blank"
+  );
+}
+
+function render(){
+  const q=document.getElementById("search").value.toLowerCase();
+  const list=document.getElementById("songs");
+  list.innerHTML="";
+
+  tracks.filter(t=>
+    (t.title+" "+t.artist).toLowerCase().includes(q)
+  ).forEach(t=>{
+    const row=document.createElement("div");
+    row.className="song";
+    row.innerHTML=`
+      <div class="songcover">${t.emoji}</div>
+      <div class="info">
+        <b></b><small></small>
+      </div>
+      <span>▶</span>`;
+    row.querySelector("b").textContent=t.title;
+    row.querySelector("small").textContent=t.artist;
+    row.style.cursor="pointer";
+    row.onclick=()=>openSpotify(t.title+" "+t.artist);
+    list.appendChild(row);
+  });
+
+  if(!list.children.length){
+    list.textContent="Lagu tidak ditemukan.";
+  }
+}
+render();
+</script>
+</body>
+</html>
