@@ -14,7 +14,12 @@ body {
     margin: 0;
     min-height: 100vh;
     padding: 16px;
-    background: #090909 url("https://raw.githubusercontent.com/Obrybry/WEBSITE-KU/main/1808b7b8f232d39ae2dfdd717cb1ccd6.jpg") center / cover fixed no-repeat;
+    background-color: #090909;
+    background-image: url("https://raw.githubusercontent.com/Obrybry/WEBSITE-KU/main/1808b7b8f232d39ae2dfdd717cb1ccd6.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: white;
     font-family: Arial, sans-serif;
 }
@@ -44,8 +49,8 @@ main {
     max-width: 900px;
     margin: auto;
     padding: 18px;
-    background: rgba(10,10,10,.82);
-    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(10, 10, 10, 0.82);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 18px;
 }
 
@@ -60,7 +65,7 @@ h2 {
     margin-bottom: 16px;
 }
 
-/* CAROUSEL KIRI-KANAN */
+/* PLAYLIST GESER KIRI DAN KANAN */
 .playlist-container {
     display: flex;
     flex-direction: row;
@@ -134,7 +139,7 @@ footer {
 
 <header>
     <svg class="logo" viewBox="0 0 24 24" aria-label="Spotify">
-        <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.503 17.308a.75.75 0 0 1-1.032.248c-2.826-1.727-6.385-2.117-10.578-1.16a.75.75 0 1 1-.334-1.462c4.586-1.048 8.52-.598 11.696 1.342a.75.75 0 0 1 .248 1.032zm1.472-3.275a.937.937 0 0 1-1.289.309c-3.235-1.989-8.168-2.565-11.994-1.403a.938.938 0 1 1-.545-1.795c4.372-1.326 9.802-.684 13.519 1.6a.937.937 0 0 1 .309 1.289zm.126-3.41C15.22 8.33 8.79 8.117 5.068 9.247a1.125 1.125 0 1 1-.654-2.153c4.273-1.297 11.38-1.047 15.875 1.622a1.125 1.125 0 0 1-1.188 1.907z"/>
+        <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm5.503 17.308a.75.75 0 0 1-1.032.248c-2.826-1.727-6.385-2.117-10.578-1.16a.75.75 0 1 1-.334-1.462c4.586-1.048 8.52-.598 11.696 1.342.352.215.463.676.248 1.032zm1.472-3.275a.937.937 0 0 1-1.289.309c-3.235-1.989-8.168-2.565-11.994-1.403a.938.938 0 1 1-.545-1.795c4.372-1.326 9.802-.684 13.519 1.6.442.272.58.848.309 1.289zm.126-3.41C15.22 8.33 8.79 8.117 5.068 9.247a1.125 1.125 0 1 1-.654-2.153c4.273-1.297 11.38-1.047 15.875 1.622a1.125 1.125 0 0 1-1.188 1.907z"/>
     </svg>
 
     <h1>OBRY</h1>
@@ -143,10 +148,11 @@ footer {
 
 <main>
     <h2>🎧 My Playlist</h2>
-    <p class="slide-hint">← Geser ke kiri untuk playlist berikutnya →</p>
+    <p class="slide-hint">← GESER KE KIRI UNTUK PLAYLIST LAINNYA →</p>
 
     <div class="playlist-container">
 
+        <!-- PLAYLIST 1 -->
         <div class="playlist">
             <iframe
                 src="https://open.spotify.com/embed/playlist/0HCgtcdgiD1j8Zrgsml4rX"
@@ -156,6 +162,7 @@ footer {
             </iframe>
         </div>
 
+        <!-- PLAYLIST 2 -->
         <div class="playlist">
             <iframe
                 src="https://open.spotify.com/embed/playlist/3ek65NRqWq1WYjGUvCUUi7"
@@ -165,6 +172,7 @@ footer {
             </iframe>
         </div>
 
+        <!-- PLAYLIST 3 -->
         <div class="playlist">
             <iframe
                 src="https://open.spotify.com/embed/playlist/37i9dQZF1DX186v583rmzp"
